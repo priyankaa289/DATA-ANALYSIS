@@ -2,23 +2,28 @@ students = []
 
 def add_students():
  
- Roll_no=input("Enter Student Rollno:-")
- Name=input("Enter Student Name:-")
- Age=input("Enter Student Age:-")
- Course=input("Enter Student Course:-")
+    roll_no = input("Enter Student Rollno:-")
 
- student={
-        "rollno ":Roll_no,
-         "name": Name,
-         "age": Age,
-         "course": Course
-}
- 
- students.append(student)
- print("Students Add Successfully")
+    for st in students:
+        if st["rollno"] == roll_no:
+            print("Student Rollno Already Exists")
+            return
 
+    Name = input("Enter Student Name:-")
+    Age = input("Enter Student Age:-")
+    Course = input("Enter Student Course:-")
 
+    student = {
+        "rollno": roll_no,
+        "name": Name,
+        "age": Age,
+        "course": Course
+    }
 
+    students.append(student)
+    print("Students Added Successfully")
+
+  
 while True:
     print("\n---- Student Management System----")
     print("1. Add student")
