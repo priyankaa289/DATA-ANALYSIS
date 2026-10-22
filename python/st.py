@@ -23,8 +23,20 @@ def add_students():
     students.append(student)
     print("Students Added Successfully")
 
-  
+def view_students():
+    if not students:
+        print("No Students Deatail Found")
+        return
+
+    for st in students:
+        print("\n Roll No:", st["rollno"])
+        print("Name:", st["name"])
+        print("Age:", st["age"])
+        print("Course:", st["course"])
+    
+       
 while True:
+
     print("\n---- Student Management System----")
     print("1. Add student")
     print("2. View Student")
@@ -38,7 +50,7 @@ while True:
     if choice == 1:
         add_students()
     elif choice == 2:
-        print("View Student")
+        view_students()
 
     elif choice == 3:
          print("Search Student")
