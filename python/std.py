@@ -33,13 +33,13 @@ def view_students():
          print("Roll No:",st["rollno"])
          print("Name:",st["name"])
          print("Age:",st["age"])
-         print("Course:",st["course"])
+         print("Course:",st["course"],"\n")
          
          
 
 def search_students():
 
- rollno=input("Enter Roll no:-")
+ rollno=input("Enter Roll no:- ")
  
  for st in students:
       if st["rollno"] == rollno:
@@ -74,8 +74,25 @@ def update_students():
     rollno = input("Enter Student Roll No:- ")
 
     for st in students:
-        
-      
+        if st["rollno"] == rollno:
+            name = input("Enter New Name:-")
+            age = input("Enter New Age:-")
+            course = input("Enter New Course:-")
+            
+            if name:
+                st["name"] = name
+
+            if age:
+                st["age"] = age
+
+            if course:
+                st["course"] = course
+
+        print("Student Details Updated Successfully")
+        return
+
+    else:
+        print("Student Not Found")        
     
 while True: 
 
@@ -87,7 +104,7 @@ while True:
     print("5. Delete students Deatils")
     print("6. Exit")
 
-    choice = int(input("Enter Your Choice:-"))
+    choice = int(input("Enter Your Choice:- \n"))
 
     if choice == 1:
         add_students()
@@ -98,10 +115,10 @@ while True:
         search_students()
 
     elif choice == 4:
-            delete_studentS()
+        update_students()
 
     elif choice == 5:
-        print("Update Students Details")
+        delete_studentS()
 
     elif choice == 6:
         print("Thank You!")
